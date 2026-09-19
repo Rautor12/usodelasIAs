@@ -124,3 +124,10 @@ h2 {
 }
 
 
+#lista-link img {
+    display: block;
+    margin: auto;
+    cursor: pointer;
+}
+
+
