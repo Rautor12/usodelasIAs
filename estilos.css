@@ -1,0 +1,484 @@
+
+* {
+	padding: 0px;
+	margin: 0Px;
+	border: 0px;
+}
+
+body{
+	width: 100%;
+	height: auto;	
+	margin: auto;
+	background-color: #061A33;
+}
+
+header{
+	width: 100%;
+	height: 150px;
+	background: #1976D2;
+	overflow: hidden;
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+}
+
+nav{
+	width: auto;
+	height: 50px;
+	background: #2196F3;
+	position: sticky;
+	top: 150px;
+	z-index: 1100;
+}
+
+main{
+	width: 100%;
+	display:flex;
+	align-items: stretch;
+	background: #D6EAF8;
+}
+
+section{
+	width: 80%;
+	background: #D6EAF8;
+}
+
+aside{
+	width: 20%;
+    background:#BBDEFB;
+
+	z-index: 900;	
+    align-self: stretch;
+    box-sizing: border-box;
+}
+
+.contenido-aside{
+    position: sticky;
+    top: 200px;
+    height: calc(auto);
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: none;
+}
+.contenido-aside::-webkit-scrollbar{
+    display: none;
+}
+
+footer{
+	height: 50px;
+	background:#1976D2;		
+}
+
+
+
+
+
+
+h2 {
+	font-family:"Cookie", cursive;
+	font-size: 35px;
+	font-weight: bold;
+	text-align:center;
+	padding:35px;
+	color: #0D47A1;
+
+}
+
+
+
+.contenido {
+	font-family:"Cookie", cursive;
+	font-size:30px;
+	text-align:left;
+	padding:10px;
+	color: #17365D;
+	font-weight: 400;	
+}
+
+
+#listahab {
+	padding-left:40px;
+	list-style: circle;
+	font-family:"Cookie", cursive;
+	font-size:30px;
+	color: #17365D;
+}
+
+
+#img-estudiando {
+	width:200px;
+	padding: 20px;		
+}
+
+
+#lista-link {
+	padding-left:5px;
+	list-style: none;
+}
+
+#lista-link li{
+	padding-top:20;	
+}
+
+
+
+
+#menu{
+	list-style:none;
+	
+}
+
+#menu li {
+    display: inline-block;
+    float: left;
+}
+
+#menu li a{
+    text-decoration: none;
+    padding: 0 18px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    font-family: "Cookie", cursive;
+    font-size: 26px;
+    box-sizing: border-box;
+	position: relative;
+	overflow: hidden;
+	
+}
+
+#menu li a:hover{	
+	background-color:#03A9F4;	
+	color: white;	
+	font-weight: bold;
+
+}
+
+#menu li a::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 40%;
+    height: 100%;
+
+    background: rgba(255, 255, 255, 0.35);
+
+    transform: skewX(-25deg);
+
+    opacity: 0;
+    pointer-events: none;
+}
+
+#menu li a:hover::after{
+    opacity: 1;
+    animation: shine 0.8s;
+}
+
+@keyframes shine{
+    100%{
+        left: 150%;
+    }
+}
+#lista-link img {
+    display: block;
+    margin: auto;
+    cursor: pointer;
+	background: #2395f3;
+	
+}
+
+
+/* ================================= */
+/* CARRUSEL DEL HEADER               */
+/* ================================= */
+
+.deslizador{
+    position: relative;
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+    background: #1976D2;
+}
+
+
+/* Ocultar los botones de radio */
+
+.deslizador input{
+    display: none;
+}
+
+
+/* Ocultar los botones/círculos */
+
+.botones{
+    display: none;
+}
+
+
+/* Contenedor de las tres imágenes */
+
+.mi-contenedor{
+    position: relative;
+    left: 0;
+    width: 300%;
+    height: 150px;
+    display: flex;
+    transition: left 600ms ease-in-out;
+}
+
+
+/* Cada imagen ocupa un tercio del contenedor */
+
+.primer-slide,
+.segundo-slide,
+.tercer-slide{
+    width: 33.3333%;
+    height: 150px;
+    flex-shrink: 0;
+}
+
+
+/* Imágenes del carrusel */
+
+.primer-slide img,
+.segundo-slide img,
+.tercer-slide img{
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* Primera imagen */
+
+.deslizador input:nth-child(1):checked ~ .mi-contenedor{
+    left: 0;
+}
+
+
+/* Segunda imagen */
+
+.deslizador input:nth-child(2):checked ~ .mi-contenedor{
+    left: -33.3333%;
+}
+
+
+/* Tercera imagen */
+
+.deslizador input:nth-child(3):checked ~ .mi-contenedor{
+    left: -66.6666%;
+}
+
+
+/* ============================= */
+/* PORTADA DE BIENVENIDA */
+/* ============================= */
+
+.portada-ia{
+    width: 100%;
+    height: 100vh;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 2000;
+
+    overflow: hidden;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    will-change: transform, opacity;
+	pointer-events: none;
+}
+
+
+
+
+/* =====================================================
+   CARRUSEL 3D DE INTELIGENCIAS ARTIFICIALES
+   ===================================================== */
+
+.carrusel-3d{
+    width: 100%;
+    height: 400px;
+
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+
+    perspective: 1000px;
+
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+
+/* =====================================================
+   GALERÍA
+   ===================================================== */
+
+.galeria-3d{
+    width: 100%;
+    height: 300px;
+
+    position: relative;
+
+    transform-style: preserve-3d;
+}
+
+
+/* =====================================================
+   IMÁGENES
+   ===================================================== */
+
+.imagen-3d{
+    position: absolute;
+
+    width: auto;
+    height: 280px;
+
+    left: 50%;
+    top: 50%;
+
+    transform-style: preserve-3d;
+
+    /*
+       Movimiento suave entre posiciones
+    */
+    transition:
+        transform 900ms cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 900ms ease;
+
+    backface-visibility: hidden;
+
+    opacity: 0;
+}
+
+
+.imagen-3d a{
+    display: block;
+    width: fit-content;
+    height: fit-content;
+}
+
+/* Imagen */
+
+.imagen-3d img{
+    width: auto;
+    height: 280px;
+
+    object-fit: cover;
+
+    display: block;
+
+    border-radius: 10px;
+}
+
+
+/* =====================================================
+   FLECHAS
+   ===================================================== */
+
+.flecha{
+    position: absolute;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    z-index: 10;
+
+    width: 45px;
+    height: 45px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(25, 118, 210, 0.3);
+
+    color: white;
+
+    font-size: 28px;
+
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+
+/* Cuando pasamos el mouse */
+
+.flecha:hover{
+    background: rgba(25, 118, 210, 0.9);
+}
+
+
+/* Flecha izquierda */
+
+.flecha.izquierda{
+    left: 20px;
+}
+
+
+/* Flecha derecha */
+
+.flecha.derecha{
+    right: 20px;
+}
+
+
+/* =====================================================
+   BOTÓN PAUSA / REPRODUCCIÓN
+   ===================================================== */
+
+.boton-stop{
+    position: absolute;
+
+    bottom: 10px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 10;
+
+    width: 45px;
+    height: 45px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(25, 118, 210, 0.3);
+
+    color: white;
+
+    font-size: 20px;
+
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+
+/* Cuando pasamos el mouse */
+
+.boton-stop:hover{
+    background: rgba(25, 118, 210, 0.9);
+}
+
+
+
+.flecha, .boton-stop{
+    transition: background 0.3s ease;
+}
